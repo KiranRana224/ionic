@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <!-- Optional: Menu Button to toggle the sidebar -->
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>About</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <p>Welcome to the About page</p>
+
+  <!-- The bottom menu that will toggle visibility when About is clicked -->
+  <div *ngIf="isAboutMenuVisible" class="about-menu">
+    <ion-item button (click)="navigateTo('invoice')">Invoice</ion-item>
+    <ion-item button (click)="navigateTo('bill')">Bill</ion-item>
+    <ion-item button (click)="navigateTo('cn')">CN</ion-item>
+    <ion-item button (click)="navigateTo('dn')">DN</ion-item>
+  </div>
+</ion-content>

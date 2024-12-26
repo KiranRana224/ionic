@@ -1,17 +1,22 @@
 import { NgModule } from '@angular/core';
-import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
+import { MobilePage } from './mobile/mobile.page';
 
 const routes: Routes = [
   {
     path: '',
+    redirectTo: 'mobile', // Default path
+    pathMatch: 'full',
+  },
+  {
+    path: 'mobile',
     loadChildren: () =>
-      import('./tabs/tabs.module').then((m) => m.TabsPageModule),
+      import('./mobile/mobile.module').then((m) => m.MobileModule),
   },
 ];
+
 @NgModule({
-  imports: [
-    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules }),
-  ],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

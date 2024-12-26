@@ -1,0 +1,14 @@
+.about-menu {
+    position: absolute;
+    bottom: 50px; /* Adjust depending on your layout */
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    z-index: 10;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .about-menu ion-item {
+    padding: 10px 15px;
+  }
+  

@@ -1,0 +1,117 @@
+<!-- 
+<ion-app>
+  <ion-menu side="start" content-id="main-content">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content>
+      <ion-list>
+        <ion-item routerLink="/mobile/tabs/tab1" (click)="closeMenu()"
+          >Home</ion-item
+        >
+        <ion-item routerLink="/mobile/tabs/tab2" (click)="closeMenu()"
+          >About</ion-item
+        >
+        <ion-item routerLink="/mobile/tabs/tab3" (click)="closeMenu()"
+          >Settings</ion-item
+        >
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+
+  <ion-router-outlet id="main-content"></ion-router-outlet>
+
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button (click)="openMenu()"></ion-menu-button>
+      </ion-buttons>
+      <ion-title>My Mobile App</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-tabs>
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button tab="tabs/tab1">
+        <ion-icon name="home"></ion-icon>
+        <ion-label>Home</ion-label>
+      </ion-tab-button>
+      <ion-tab-button tab="tabs/tab2">
+        <ion-icon name="information-circle"></ion-icon>
+        <ion-label>About</ion-label>
+      </ion-tab-button>
+      <ion-tab-button tab="tabs/tab3">
+        <ion-icon name="settings"></ion-icon>
+        <ion-label>Settings</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+</ion-app> -->
+<ion-app>
+  <!-- Sidebar (ion-menu) -->
+  <ion-menu side="start" content-id="main-content">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content>
+      <ion-list>
+        <ion-item routerLink="/mobile/tabs/tab1" (click)="closeMenu()"
+          >Home</ion-item
+        >
+        <ion-item routerLink="/mobile/tabs/tab2" (click)="closeMenu()"
+          >About</ion-item
+        >
+        <ion-item routerLink="/mobile/tabs/tab3" (click)="closeMenu()"
+          >Settings</ion-item
+        >
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+
+  <!-- Main content area for routing -->
+  <ion-router-outlet id="main-content"></ion-router-outlet>
+
+  <!-- Header with Menu Button -->
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <!-- Menu Button to Toggle Sidebar -->
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>My Mobile App</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <!-- Footer Tabs -->
+  <ion-tabs>
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button tab="tabs/tab1">
+        <ion-icon name="home"></ion-icon>
+        <ion-label>Home</ion-label>
+      </ion-tab-button>
+
+      <ion-tab-button (click)="toggleAboutMenu()">
+        <ion-icon name="information-circle"></ion-icon>
+        <ion-label>About</ion-label>
+      </ion-tab-button>
+
+      <ion-tab-button tab="tabs/tab3">
+        <ion-icon name="settings"></ion-icon>
+        <ion-label>Settings</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+
+  <!-- About Tab Menu - Hidden by default -->
+  <div *ngIf="aboutMenuVisible" class="about-menu">
+    <ion-item routerLink="/mobile/tabs/tab2/invoice">Invoice</ion-item>
+    <ion-item routerLink="/mobile/tabs/tab2/bill">Bill</ion-item>
+    <ion-item routerLink="/mobile/tabs/tab2/cn">Credit Note</ion-item>
+    <ion-item routerLink="/mobile/tabs/tab2/dn">Debit Note</ion-item>
+  </div>
+</ion-app>
